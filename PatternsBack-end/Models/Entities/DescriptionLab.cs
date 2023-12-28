@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PatternsBack_end.Models;
+namespace PatternsBack_end.Models.Entities;
 
 public partial class DescriptionLab
 {

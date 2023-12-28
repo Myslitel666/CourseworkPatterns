@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using PatternsBack_end.Models;
-using Microsoft.EntityFrameworkCore;
+using PatternsBack_end.Interfaces;
+using PatternsBack_end.Services;
+using System;
+using System.Threading.Tasks;
 
 namespace PatternsBack_end.Controllers
 {
@@ -9,11 +10,13 @@ namespace PatternsBack_end.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private PatternsContext _dbContext;
+        private readonly ILabService _labService;
+        private readonly IDescriptionLabService _descriptionLabService;
 
-        public HomeController()
+        public HomeController(ILabService labService, IDescriptionLabService descriptionLabService)
         {
-            _dbContext = new PatternsContext();
+            _labService = labService ?? throw new ArgumentNullException(nameof(labService));
+            _descriptionLabService = descriptionLabService ?? throw new ArgumentNullException(nameof(descriptionLabService));
         }
 
         [HttpGet("lab-list")]
@@ -21,11 +24,7 @@ namespace PatternsBack_end.Controllers
         {
             try
             {
-                var labList = await _dbContext.Labs
-                    .Where(c => c.LabId != null)
-                    .Select(c => new { LabName = c.LabName, LabIcon = c.LabIcon })
-                    .ToListAsync();
-
+                var labList = await _labService.GetLabList();
                 return Ok(labList);
             }
             catch (Exception ex)
@@ -40,11 +39,7 @@ namespace PatternsBack_end.Controllers
         {
             try
             {
-                var descriptionLabs = await _dbContext.DescriptionLabs
-                    .OrderByDescending(p => p.Priority)
-                    .Take(6) // Получить 6 самых популярных товаров
-                    .ToListAsync();
-
+                var descriptionLabs = await _descriptionLabService.GetPopularDescriptionLabs();
                 return Ok(descriptionLabs);
             }
             catch (Exception ex)

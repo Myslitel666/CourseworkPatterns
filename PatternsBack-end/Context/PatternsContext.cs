@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using PatternsBack_end.Models.Entities;
 
-namespace PatternsBack_end.Models;
+namespace PatternsBack_end.Context;
 
 public partial class PatternsContext : DbContext
 {

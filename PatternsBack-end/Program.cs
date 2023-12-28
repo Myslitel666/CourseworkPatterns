@@ -2,6 +2,10 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
+using PatternsBack_end.Context;
+using PatternsBack_end.Interfaces;
+using PatternsBack_end.Repositories;
+using PatternsBack_end.Services;
 
 namespace PatternsBack_end
 {
@@ -10,6 +14,16 @@ namespace PatternsBack_end
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Добавляем сервисы в контейнер
+            builder.Services.AddDbContext<PatternsContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<ILabRepository, LabRepository>();
+            builder.Services.AddScoped<IDescriptionLabRepository, DescriptionLabRepository>();
+
+            builder.Services.AddScoped<ILabService, LabService>();
+            builder.Services.AddScoped<IDescriptionLabService, DescriptionLabService>();
 
             // Add services to the container.
 
