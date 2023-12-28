@@ -14,7 +14,7 @@ namespace PatternsBack_end.Services
 
         public async Task<IEnumerable<DescriptionLabDTO>> GetPopularDescriptionLabs()
         {
-            var descriptionLabs = await _descriptionLabRepository.GetPopularDescriptionLabs();
+            var descriptionLabs = await _descriptionLabRepository.GetDescriptionLabsWithPriority();
             return descriptionLabs.Select(descLab => new DescriptionLabDTO { LabName = descLab.LabName, ImageUrl = descLab.ImageUrl, LabDescription = descLab.LabDescription });
         }
     }

@@ -4,6 +4,6 @@ namespace PatternsBack_end.Interfaces
 {
     public interface IDescriptionLabRepository
     {
-        Task<IEnumerable<DescriptionLab>> GetPopularDescriptionLabs();
+        Task<IEnumerable<DescriptionLab>> GetDescriptionLabsWithPriority();
     }
 }

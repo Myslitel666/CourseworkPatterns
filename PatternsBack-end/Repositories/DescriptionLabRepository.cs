@@ -15,7 +15,7 @@ namespace PatternsBack_end.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<DescriptionLab>> GetPopularDescriptionLabs()
+        public async Task<IEnumerable<DescriptionLab>> GetDescriptionLabsWithPriority()
         {
             return await _dbContext.DescriptionLabs
                 .OrderByDescending(p => p.Priority)
