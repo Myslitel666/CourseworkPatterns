@@ -1,0 +1,25 @@
+﻿/*Обрезка текста*/
+.product-name {
+    height: 60px;
+    /*Format content*/
+    display: -webkit-box;
+    /*Вертикльный content*/
+    -webkit-box-orient: vertical;
+    /*Обрезка текста под height*/
+    overflow: hidden;
+    /*Добавление многоточия после строк*/
+    -webkit-line-clamp: 2;
+}
+.product-box {
+    border: 2px solid; /* Устанавливаем толщину обводки в исходное состояние */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 1s ease; /* Плавный переход для всех свойств */
+    backface-visibility: hidden; /* Фиксим баг скачков текста */
+}
+
+.product-box:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternsBack-end", "PatternsBack-end\PatternsBack-end.csproj", "{1E122ADC-CB57-4B2E-8DAB-10058982C735}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "patternsfront-end", "patternsfront-end\patternsfront-end.esproj", "{AD45E068-99C1-4604-A17B-0EABE2C56663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E122ADC-CB57-4B2E-8DAB-10058982C735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E122ADC-CB57-4B2E-8DAB-10058982C735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E122ADC-CB57-4B2E-8DAB-10058982C735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E122ADC-CB57-4B2E-8DAB-10058982C735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD45E068-99C1-4604-A17B-0EABE2C56663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD45E068-99C1-4604-A17B-0EABE2C56663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD45E068-99C1-4604-A17B-0EABE2C56663}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AD45E068-99C1-4604-A17B-0EABE2C56663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD45E068-99C1-4604-A17B-0EABE2C56663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD45E068-99C1-4604-A17B-0EABE2C56663}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DFBD16E-FE2C-4AA6-8974-A2A0B06DD46D}
+	EndGlobalSection
+EndGlobal
