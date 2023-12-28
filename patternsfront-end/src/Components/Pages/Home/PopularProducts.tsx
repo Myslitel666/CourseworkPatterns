@@ -34,7 +34,7 @@ const PopularProducts: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${apiUrl}/api/home/popular-products`);
+                const response = await axios.get(`${apiUrl}/api/home/description-lab`);
                 setPopularProducts(response.data);
             } catch (error) {
                 console.error('Error fetching popular products:', error);

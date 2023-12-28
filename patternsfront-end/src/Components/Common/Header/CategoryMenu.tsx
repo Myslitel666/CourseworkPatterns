@@ -22,7 +22,7 @@ const CategoryMenu: React.FC = () => {
             try {
                 const response = await axios.get<{
                     labName: string; labIcon: string
-                }[]>(`${apiUrl}/api/home/categories`);
+                }[]>(`${apiUrl}/api/home/lab-list`);
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

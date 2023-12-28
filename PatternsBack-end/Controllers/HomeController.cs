@@ -16,7 +16,7 @@ namespace PatternsBack_end.Controllers
             _dbContext = new PatternsContext();
         }
 
-        [HttpGet("categories")]
+        [HttpGet("lab-list")]
         public async Task<IActionResult> GetLabList()
         {
             try
@@ -35,7 +35,7 @@ namespace PatternsBack_end.Controllers
             }
         }
 
-        [HttpGet("popular-products")]
+        [HttpGet("description-lab")]
         public async Task<IActionResult> GetDescriptionLabs()
         {
             try
